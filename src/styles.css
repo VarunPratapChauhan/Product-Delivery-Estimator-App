@@ -1,0 +1,153 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #121212;
+}
+
+.app-container {
+    max-width: 600px;
+    margin: auto;
+    background: #1e1e1e;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    padding: 16px;
+    margin: 8px;
+    border-radius: 5px;
+}
+
+.product-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-side {
+    flex: 1;
+    color: #e0e0e0;
+}
+
+.right-side {
+    display: flex;
+    align-items: center;
+}
+
+.right-side input {
+    margin-right: 8px;
+    padding: 8px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #3c3c3c;
+    color: #ffffff;
+}
+
+.right-side input::placeholder {
+    color: #aaa;
+}
+
+.estimated-delivery {
+    margin-top: 16px;
+    color: #f0a500;
+}
+
+.product-list {
+    padding: 20px;
+    background-color: #1e1e1e;
+}
+
+.product-list h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-controls button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination-controls button:disabled {
+    background-color: #555555;
+    cursor: not-allowed;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.pagination-controls span {
+    margin: 0 10px;
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        padding: 10px;
+    }
+
+    .product-item {
+        padding: 12px;
+        margin: 4px;
+    }
+
+    .product-list h1 {
+        font-size: 20px;
+    }
+
+    .pagination-controls button {
+        padding: 8px 12px;
+    }
+
+    .pagination-controls span {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    .product-list h1 {
+        font-size: 18px;
+    }
+
+    .product-item {
+        margin: 2px;
+    }
+
+    .pagination-controls button {
+        padding: 6px 10px;
+    }
+
+    .pagination-controls span {
+        font-size: 12px;
+    }
+}
