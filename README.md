@@ -72,6 +72,17 @@ A responsive, dynamic e-commerce application built with React that displays prod
 - **Pagination**: Supports smooth navigation through large datasets, displaying 10 items per page.
 - **Responsive Design**: Optimized for both desktop and mobile screens.
 
+## Delivery Date Estimation Logic
+
+1. **Logic by Provider**:
+    - **Provider A**: If the product is ordered before 5 PM and is in stock, delivery is estimated for the same day; next-day otherwise.
+    - **Provider B**: If ordered before 9 AM and in stock, the delivery is scheduled for the same day; if ordered after 9 AM, delivery is estimated for the next day.
+    - **General Partners**: Delivery is estimated within 2-5 days depending on the pincode region, with the exact days determined by the delivery time (TAT) of that pincode present in pincode.csv file.
+
+2. **Same-Day Delivery Countdown Timer**:
+    - For **Provider A** and **Provider B**, a countdown timer displays the remaining time to qualify for same-day delivery.
+    - If the cutoff time is missed, the timer will automatically reset to indicate the next available delivery date (next day).
+
 ## Assumptions and Design Decisions
 
 ### Assumptions
@@ -83,14 +94,18 @@ A responsive, dynamic e-commerce application built with React that displays prod
       - `stock.csv` provides product IDs with a Boolean indicating stock status.
       - `pincodes.csv` includes 25,000 entries with pincode, provider name, and delivery time (TAT).
 
-2. **Data Loading**:
-    - All CSV data is loaded asynchronously at the start of the app.
-    - Assumes that these files are accessible and correctly formatted to avoid parsing errors.
+2. **Delivery Cutoff Times**:
+    - Orders for **Provider A** must be placed before 5 PM to qualify for same-day delivery.
+    - Orders for **Provider B** must be placed before 9 AM for same-day delivery.
+
+3. **Timer Functionality**:
+    - The countdown timer resets daily based on the cutoff time of each provider.
+    - The timer is only visible for in-stock products qualifying for same-day delivery.
 
 ### Key Design Decisions
 
 1. **Pagination for Performance**:
-    - To handle up to 5000 products, pagination displays only 10 items per page, reducing load and enhancing performance.
+    - To handle large datasets, pagination displays only 10 items per page, reducing load and enhancing performance.
     - Simple pagination controls are implemented to navigate through pages.
 
 2. **CSV Parsing**:
@@ -99,9 +114,6 @@ A responsive, dynamic e-commerce application built with React that displays prod
 3. **Responsive Styling**:
     - Chose a dark-themed, minimalist design to align with modern e-commerce styling.
     - Used CSS Flexbox for a responsive layout that adjusts to different screen sizes.
-
-4. **Error Handling**:
-    - Basic error messages are displayed if fetching or parsing CSV data fails, providing feedback for users.
 
 ## Technologies Used
 
@@ -113,6 +125,6 @@ A responsive, dynamic e-commerce application built with React that displays prod
 
 ## Live Demo
 
-The app is live and can be accessed [here](https://product-delivery-estimator-app.vercel.app/).
+The app is live and can be accessed [here]([https://your-live-url.com](https://product-delivery-estimator-app.vercel.app/)).
 
 ---
