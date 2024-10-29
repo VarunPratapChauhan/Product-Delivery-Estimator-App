@@ -125,6 +125,6 @@ A responsive, dynamic e-commerce application built with React that displays prod
 
 ## Live Demo
 
-The app is live and can be accessed [here]([https://your-live-url.com](https://product-delivery-estimator-app.vercel.app/)).
+The app is live and can be accessed [here](https://product-delivery-estimator-app.vercel.app/).
 
 ---
